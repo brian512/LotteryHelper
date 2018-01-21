@@ -20,6 +20,39 @@ public class Main {
 		
 //		updateHistoryData();
 		
+//		Calendar calendar = Calendar.getInstance();
+//		calendar.setTime(new Date());
+//		int year = 2018;
+//		int today = calendar.get(Calendar.DAY_OF_YEAR); // 20180121
+//		for (int dayOfYear = today; dayOfYear >= 0; dayOfYear--) {
+//			if (dayOfYear == 0) {
+//				year -= 1;
+//				calendar.set(Calendar.YEAR, year);
+//				dayOfYear = calendar.getActualMaximum(Calendar.DAY_OF_YEAR);
+//				// 数据从2015-07-01开始
+//				if (year <= 2015 && calendar.get(Calendar.MONTH) < 6) {
+//					break;
+//				}
+//			}
+//			calendar.set(Calendar.DAY_OF_YEAR, dayOfYear);
+//			String dateStart = String.valueOf(calendar.get(Calendar.YEAR)) 
+//					+ String.format("%02d", calendar.get(Calendar.MONTH) + 1)
+//					+ String.format("%02d", calendar.get(Calendar.DAY_OF_MONTH))
+//					+ "072";
+//			String dateEnd = String.valueOf(calendar.get(Calendar.YEAR)) 
+//					+ String.format("%02d", calendar.get(Calendar.MONTH) + 1)
+//					+ String.format("%02d", calendar.get(Calendar.DAY_OF_MONTH))
+//					+ "096";
+////			LogUtil.log("date=" + date);
+//			
+//			LotteryTableHelper.queryDatasAtRange(Long.valueOf(dateStart), Long.valueOf(dateEnd), new OnQueryListener() {
+//				@Override
+//				public void onQuery(ArrayList<Lottery> lotteryList) {
+//					Collections.reverse(lotteryList);
+//					test1_2L(lotteryList);
+//				}
+//			} );
+//		}
 		
 		
 		LotteryTableHelper.queryLatestDatas(2000, new OnQueryListener() {
@@ -31,9 +64,11 @@ public class Main {
 		} );
 	}
 	
+	
+	
 	private static void test1_2L(ArrayList<Lottery> lotteryList) {
 		int[] VALUES = new int[] {
-				10, 18, 35, 60, 90, 100
+				10, 20, 40, 60, 100
 		};
 		test(lotteryList, 42, 1, VALUES);
 	}
@@ -94,9 +129,9 @@ public class Main {
 			
 		}
 		
-		LogUtil.log("finish####################");
-		LogUtil.log("finish####################");
-		LogUtil.log("finish####################");
+		LogUtil.log("finish####################ownMoney=" + ownMoney);
+//		LogUtil.log("finish####################");
+//		LogUtil.log("finish####################");
 	}
 	
 	

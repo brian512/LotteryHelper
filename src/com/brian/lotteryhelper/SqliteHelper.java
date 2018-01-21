@@ -33,7 +33,7 @@ public class SqliteHelper {
 	}
 	
 	public static ResultSet query(String sql, final OnReadListener listener) {
-		LogUtil.log(sql);
+//		LogUtil.log(sql);
 		Connection connection = null;
 		Statement statement = null;
 		try {

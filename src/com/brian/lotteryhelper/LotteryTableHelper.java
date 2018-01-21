@@ -51,12 +51,26 @@ public class LotteryTableHelper {
 		void onQuery(ArrayList<Lottery> lotteryList);
 	}
 	
+	public static void queryDatasAtRange(long start, long end, final OnQueryListener listener) {
+		String sql = "SELECT * FROM " + TABLE_NAME 
+				+ " WHERE lotteryID>" + start + " AND lotteryID<" +  end
+				+ " ORDER BY lotteryID DESC"
+				+ ";"
+				;
+		queryDatas(sql, listener);
+	}
+	
 	public static void queryLatestDatas(int count, final OnQueryListener listener) {
 		String sql = "SELECT * FROM " + TABLE_NAME 
 				+ " ORDER BY lotteryID DESC"
 				+ " LIMIT " + count 
 				+ ";"
 				;
+		queryDatas(sql, listener);
+	}
+	
+	
+	private static void queryDatas(String sql, final OnQueryListener listener) {
 		SqliteHelper.query(sql, new OnReadListener() {
 			
 			@Override
