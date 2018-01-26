@@ -49,7 +49,7 @@ public class LotteryDataHelper {
 					+ String.format("%03d", end);
 //			LogUtil.log("date=" + date);
 			
-			LotteryTableHelper.queryDatasAtRange(Long.valueOf(dateStart), Long.valueOf(dateEnd), new OnQueryListener() {
+			LotteryTableHelper.queryDatasAtRange(Long.valueOf(dateStart)-1, Long.valueOf(dateEnd)+1, new OnQueryListener() {
 				@Override
 				public void onQuery(ArrayList<Lottery> lotteryList) {
 					Collections.reverse(lotteryList);
