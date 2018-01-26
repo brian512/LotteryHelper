@@ -25,7 +25,7 @@ public class Test1_2L {
 //			}
 //		});
 		
-		LotteryDataHelper.queryDatasAtRangePerDay(20, 25, 120, new OnQueryListByDayListener() {
+		LotteryDataHelper.queryDatasAtRangePerDay(2, 25, 120, new OnQueryListByDayListener() {
 			@Override
 			public void onQuery(ArrayList<ArrayList<Lottery>> list) {
 				int total = 0;
@@ -33,19 +33,21 @@ public class Test1_2L {
 					 if (lotteryList.size()<= 0) {
 						continue;
 					 }
-					 LogUtil.log("date=" + lotteryList.get(0).dateStr);
+					 LogUtil.log("\ndate=" + lotteryList.get(0).dateStr);
 					 
-					 int moneyLeft = TestHelper.test(50_000, lotteryList, new Data3_4LGroup(42, 98), 
-							 new int[] { 0, //0, 0, 0, 0,
-//								20, 30, 45, 75, //125//, 120
-//								10, 20, 40, 60, 100//, 120
-								10, 20, 40, 80, 150,// 90, 120
-//								5, 10, 20, 35, 60,// 90, 120
-							});
+//					 final int MONEY_INIT = 100_000;
+//					 
+//					 int moneyLeft = TestHelper.test(MONEY_INIT, lotteryList, new Data1_2LGroup(42, 98), 
+//							 new int[] {//0, //0, 0, 0, 0,
+//								20, 25, 40, 70, //120,// 200
+////								10, 20, 40, 60, 100//, 120
+////								10, 20, 40, 80, 150,// 90, 120
+////								5, 10, 20, 35, 60,// 90, 120
+//							});
+//					 
+//					 total += moneyLeft-MONEY_INIT;
 					 
-					 total += moneyLeft-50_000;
-					 
-//					 TestHelper.count(lotteryList, new Data1_2LGroup(42, 98));
+					 TestHelper.count(lotteryList, new Data1_2LGroup(42, 98));
 				 }
 				 
 				 

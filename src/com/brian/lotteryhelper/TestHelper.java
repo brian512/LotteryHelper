@@ -85,6 +85,10 @@ public class TestHelper {
 				
 				outPutMsg += "\t+" + (inputMoneyPerNum * (dataGroup.getOdds()-dataGroup.getGroupCnt()));
 				ownMoney += inputMoneyPerNum * dataGroup.getOdds();
+				
+				if (ownMoney - MONEY_INIT > 10_000) {
+					break;
+				}
 			} else {
 				unluckyCnt++;
 				outPutMsg += "\t-" + (inputMoneyPerNum * dataGroup.getGroupCnt());

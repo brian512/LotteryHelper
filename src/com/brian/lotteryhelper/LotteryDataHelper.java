@@ -47,7 +47,7 @@ public class LotteryDataHelper {
 					+ String.format("%02d", calendar.get(Calendar.MONTH) + 1)
 					+ String.format("%02d", calendar.get(Calendar.DAY_OF_MONTH))
 					+ String.format("%03d", end);
-//			LogUtil.log("date=" + date);
+//			LogUtil.log("dateStart=" + dateStart + "; dateEnd=" + dateEnd);
 			
 			LotteryTableHelper.queryDatasAtRange(Long.valueOf(dateStart)-1, Long.valueOf(dateEnd)+1, new OnQueryListener() {
 				@Override
