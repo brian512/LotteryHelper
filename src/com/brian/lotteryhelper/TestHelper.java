@@ -1,20 +1,26 @@
 package com.brian.lotteryhelper;
 
 import java.util.ArrayList;
+
+import com.brian.lotteryhelper.data.Lottery;
 import com.brian.lotteryhelper.group.DataGroup;
 
 public class TestHelper {
 
 	
-	public static void count(ArrayList<Lottery> lotteryList, DataGroup dataGroup) {
+	public static void count(ArrayList<Lottery> lotteryList, DataGroup dataGroup, boolean logEveryRow) {
 		int[] counts = new int[30];
 		int count = 0;
 		for(Lottery lottery : lotteryList) {
-			LogUtil.logLottery(lottery.toString());
+			if (logEveryRow) {
+				LogUtil.logLottery(lottery.toString());
+			}
 			if (!dataGroup.checkLucky(lottery)) {
 				count++;
 			} else {
-				LogUtil.log("***************************count=" + count);
+				if (logEveryRow) {
+					LogUtil.log("***************************count=" + count);
+				}
 				counts[count]++;
 				count = 0;
 			}
@@ -41,7 +47,7 @@ public class TestHelper {
 	 * @param startIndex 间隔期数
 	 */
 	public static int test(int ownMoney, ArrayList<Lottery> lotteryList, 
-			DataGroup dataGroup, int[] price) {
+			DataGroup dataGroup, int[] price, boolean logPerLottery, boolean logLostSum) {
 		final int MONEY_INIT = ownMoney;
 		
 		
@@ -54,10 +60,12 @@ public class TestHelper {
 		
 		String outPutMsg = null;
 		
-		
+		if (logPerLottery) {
+			LogUtil.log("期号\t" + "       日期\t时间\t" + "     号码\t\t" 
+					+ "当期下注\t" + "累计\t" + "盈利\t" + "结余\t");
+		}
 		for (Lottery lottery : lotteryList) {
 			outPutMsg = lottery.toString();
-			
 			
 			if (unluckyCnt < price.length) {
 				inputMoneyPerNum = price[unluckyCnt];
@@ -96,12 +104,17 @@ public class TestHelper {
 			
 			outPutMsg += "\t" + ownMoney;
 			
-//			LogUtil.logLottery(outPutMsg);
+			if (logPerLottery) {
+				LogUtil.logLottery(outPutMsg);
+			}
 			
 			if (unluckyCnt >= price.length && inputMoney > 0) {
 				stopLossCnt++;
-				LogUtil.logUnlucky("lossMoneySum=" + inputMoneySum 
-						+ "  **************************************************************");
+				if (logLostSum) {
+					LogUtil.logUnlucky("**********************************************");
+					LogUtil.logUnlucky(lottery.lotteryId + "\tlossMoneySum=" + inputMoneySum);
+					LogUtil.logUnlucky("**********************************************");
+				}
 				inputMoney = 0;
 				inputMoneySum = 0;
 			}

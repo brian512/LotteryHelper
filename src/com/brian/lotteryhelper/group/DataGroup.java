@@ -1,6 +1,6 @@
 package com.brian.lotteryhelper.group;
 
-import com.brian.lotteryhelper.Lottery;
+import com.brian.lotteryhelper.data.Lottery;
 
 public abstract class DataGroup {
 	

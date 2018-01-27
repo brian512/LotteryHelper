@@ -1,11 +1,11 @@
 package com.brian.lotteryhelper.group;
 
-import com.brian.lotteryhelper.Lottery;
+import com.brian.lotteryhelper.data.Lottery;
 
 public class Data1_2LGroup extends DataGroup {
 	
-	public Data1_2LGroup(int numberCnt, int odds) {
-		super(numberCnt, odds);
+	public Data1_2LGroup() {
+		super(42, 98);
 	}
 
 	@Override
