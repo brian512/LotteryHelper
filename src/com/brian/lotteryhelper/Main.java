@@ -14,7 +14,7 @@ public class Main {
 //		LotteryDataHelper.updateDataWithDates(dates);
 		
 		// 间隔一段时间需要更新数据
-		LotteryDataHelper.updateDataFrom("20180127");
+		LotteryDataHelper.updateDataFrom("20180227");
 	}
 	
 }

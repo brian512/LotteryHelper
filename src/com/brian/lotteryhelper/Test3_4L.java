@@ -17,7 +17,7 @@ public class Test3_4L {
 			
 			@Override
 			public void onQuery(ArrayList<Lottery> lotteryList) {
-				LogUtil.log("lotteryList=" + lotteryList.size());
+				LogUtil.logln("lotteryList=" + lotteryList.size());
 				
 				TestHelper.test(50_000, lotteryList, new Data3_4LGroup(), 
 						new int[] { 0,// 0, 0, 0, 0,
@@ -35,7 +35,7 @@ public class Test3_4L {
 					 if (lotteryList.size()<= 0) {
 						continue;
 					 }
-					 LogUtil.log("date=" + lotteryList.get(0).dateStr);
+					 LogUtil.logln("date=" + lotteryList.get(0).dateStr);
 					 
 //					 int moneyLeft = TestHelper.test(50_000, lotteryList, new Data3_4LGroup(42, 98), 
 //							 new int[] { //0, 0, 0, 0, 0,
@@ -51,8 +51,8 @@ public class Test3_4L {
 				 }
 				 
 				 
-				 LogUtil.log("total="+ total);
-				 LogUtil.log("\n");
+				 LogUtil.logln("total="+ total);
+				 LogUtil.logln("\n");
 			}
 		});
 

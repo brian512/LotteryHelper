@@ -7,6 +7,10 @@ public class LogUtil {
 	public static boolean LOG_MONEY_SUM = true;
 	
 	public static void log(String msg) {
+		System.out.print(msg);
+	}
+	
+	public static void logln(String msg) {
 		System.out.println(msg);
 	}
 	
@@ -27,7 +31,7 @@ public class LogUtil {
 	}
 	
 	public static void logError(String msg) {
-		System.out.println(msg);
+		System.err.println(msg);
 		System.out.println();
 	}
 	

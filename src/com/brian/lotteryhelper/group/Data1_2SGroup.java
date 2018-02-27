@@ -4,8 +4,8 @@ import com.brian.lotteryhelper.data.Lottery;
 
 public class Data1_2SGroup extends DataGroup {
 	
-	public Data1_2SGroup(int numberCnt, int odds) {
-		super(numberCnt, odds);
+	public Data1_2SGroup() {
+		super(42, 98);
 	}
 
 	@Override

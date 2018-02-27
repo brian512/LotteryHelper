@@ -39,7 +39,7 @@ public class LotteryParser163 {
 		Elements rowElements = awardList.getElementsByClass("start");
 		
 		if (rowElements.isEmpty()) {
-			LogUtil.log("rowElements.isEmpty");
+			LogUtil.logln("rowElements.isEmpty");
 			return null;
 		}
 		

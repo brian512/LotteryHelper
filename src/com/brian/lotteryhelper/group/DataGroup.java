@@ -1,8 +1,15 @@
 package com.brian.lotteryhelper.group;
 
+import java.util.HashSet;
+
 import com.brian.lotteryhelper.data.Lottery;
 
 public abstract class DataGroup {
+	
+	protected HashSet<Integer> DATA1 = new HashSet<>();
+	protected HashSet<Integer> DATA2 = new HashSet<>();
+	protected HashSet<Integer> DATA3 = new HashSet<>();
+	protected HashSet<Integer> DATA4 = new HashSet<>();
 	
 	protected int mOdds;
 	protected int mNumberCnt;

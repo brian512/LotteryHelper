@@ -97,7 +97,7 @@ public class LotteryDataHelper {
 				continue;
 			}
 			if (lotteries.size() < 120) {
-				LogUtil.log(date + "\t lotteryCnt=" + lotteries.size());
+				LogUtil.logln(date + "\t lotteryCnt=" + lotteries.size());
 			}
 			LotteryTableHelper.insertLotteries(lotteries);
 		}
@@ -108,7 +108,7 @@ public class LotteryDataHelper {
 		try {
 			DateFormat format = new SimpleDateFormat("yyyyMMdd");
 			dateStart = format.parse(dateStr);
-			LogUtil.log("dateStart=" + dateStart);
+			LogUtil.logln("dateStart=" + dateStart);
 		} catch (ParseException e) {
 			e.printStackTrace();
 			return;
@@ -145,7 +145,7 @@ public class LotteryDataHelper {
 				continue;
 			}
 			if (lotteries.size() < 120) {
-				LogUtil.log(date + "\t lotteryCnt=" + lotteries.size());
+				LogUtil.logln(date + "\t lotteryCnt=" + lotteries.size());
 			}
 			LotteryTableHelper.insertLotteries(lotteries);
 		}

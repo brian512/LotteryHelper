@@ -39,7 +39,7 @@ public class LotteryParser {
 		Elements rowElements = tableNode.getElementsByTag("tr");
 		
 		if (rowElements.isEmpty()) {
-			LogUtil.log("rowElements.isEmpty");
+			LogUtil.logln("rowElements.isEmpty");
 			return null;
 		}
 		

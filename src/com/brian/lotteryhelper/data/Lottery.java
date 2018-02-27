@@ -21,6 +21,9 @@ public class Lottery {
 	public String toString() {
 		return String.format("%03d", lotteryId%1000)
 				+ "\t " + dateStr 
-				+ "\t " + data1 + " " + data2 + " " + data3 + " " + data4;
+				+ "\t " + data1 + " " 
+				+ data2 + " " 
+				+ data3 + " " 
+				+ data4;
 	}
 }

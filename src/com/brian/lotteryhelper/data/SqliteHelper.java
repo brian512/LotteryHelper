@@ -19,7 +19,7 @@ public class SqliteHelper {
 		try {
 			Class.forName("org.sqlite.JDBC");
 			connection = DriverManager.getConnection("jdbc:sqlite:" + DB_NAME);
-			LogUtil.log("Opened database successfully");
+			LogUtil.logln("Opened database successfully");
 
 			statement = connection.createStatement();
 			statement.executeUpdate(sql);
